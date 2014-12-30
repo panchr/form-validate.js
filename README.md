@@ -27,7 +27,7 @@ The validation tool can up to four options:
 Option | Description | Type | Default Value
 -------|------------|-------|--------------
 errorClass | The CSS class to apply when an error occurs | string | error
-successCLass | The CSS Class to apply when the input is valid | string | success
+successClass | The CSS Class to apply when the input is valid | string | success
 onchange | Whether or not to add the change-based handlers | boolean | true
 validators | Mapping of input types to RegEx validators | object | [validators](#default-validators)
 
