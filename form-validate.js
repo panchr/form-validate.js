@@ -23,7 +23,7 @@ jQuery.fn.validate = function(options) {
  		var validForm = true;
  		for (var index = 0; index < formElements.length; index++) {
 			var elem = formElements[index];
-			validForm = validateElement(elem, options);
+			validForm = validateElement(elem, options) && validForm;
 			}
 		return validForm;
  		}
