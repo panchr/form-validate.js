@@ -1,0 +1,9 @@
+input ~ .error-text, .input-validate ~ .error-text {
+  color: red;
+  display: none; }
+input.success, .input-validate.success {
+  border-color: green; }
+input.error, .input-validate.error {
+  border-color: red; }
+  input.error ~ .error-text, .input-validate.error ~ .error-text {
+    display: initial; }

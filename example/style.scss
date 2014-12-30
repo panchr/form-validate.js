@@ -1,0 +1,21 @@
+// Rushy Panchal
+// style.scss
+
+$color-form-error: red;
+$color-form-success: green;
+
+input, .input-validate {
+	& ~ .error-text {
+		color: $color-form-error;
+		display: none;
+		}
+	&.success {
+		border-color: $color-form-success;
+		}
+	&.error {
+		border-color: $color-form-error;
+		& ~ .error-text {
+			display: initial;
+			}
+		}
+	}	
