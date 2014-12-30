@@ -26,18 +26,19 @@
 			errorClass: "error", 
 			successClass: "success",
 			validators: {},
-			_triggersCalled: false}, options);
+			_triggersCalled: true}, options);
 
 		options.validators = jQuery.extend(FORM_VALIDATORS, options.validators);
 		var form = this.get(0);
 		var formElements = form.elements;
 	 	var thisFormValidate = function() {
 	 		var validForm = true;
+	 		options._triggersCalled = false;
 	 		for (var index = 0; index < formElements.length; index++) {
 				var elem = formElements[index];
 				validForm = validateElement(elem, options) && validForm;
 				}
-			options._triggersCalled = false;
+			options._triggersCalled = true; // only allow this method to call the triggers
 			return validForm;
 	 		}
 
