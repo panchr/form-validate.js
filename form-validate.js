@@ -60,7 +60,8 @@
 	function validateElement(elem, options) {
 		// Validate a specific element
 		if (elem.type in options.validators) {
-			if (options.validators[elem.type].test(elem.value)) { // Success!
+			var validator = options.validators[elem.type];
+			if ((validator instanceof RegExp && validator.test(elem.value)) || (typeof validator == "function" && validator(elem.value, elem))) { // Success!
 				$(elem).removeClass(options.errorClass).addClass(options.successClass);
 				if (options.onsuccess && !options._triggersCalled) {
 					options.onsuccess(elem);
